@@ -1,6 +1,5 @@
-from site_downloader import Downloader
+from modules.pl_python import PlPython
 
-downloader = Downloader('https://pl.python.org/forum/index.php?board=9.0')
-content = downloader.download()
-print(content)
+pl_python = PlPython(3)
+pl_python.scan()
 
