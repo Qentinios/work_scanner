@@ -3,7 +3,7 @@ Work scanner allows to search for jobs on multiple sites based on any keywords s
 
 Every site where you want to look for jobs needs to have own module implemented. This is because sites have own scripts and differ from each other.
 
-# Supported sites:
+# Supported sites
 - https://pl.python.org/forum/index.php?board=9.0
 
 If your site is not mentioned, you need to write custom module first.
