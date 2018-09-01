@@ -1,4 +1,4 @@
-from site_downloader import Downloader
+from scripts.site_downloader import Downloader
 
 
 class Site:
