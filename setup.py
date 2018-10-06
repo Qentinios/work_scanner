@@ -13,7 +13,7 @@ with open(path.join(here, 'README.md'), encoding='utf-8') as f:
 setup(
     # $ pip install work_scanner
     name='work_scanner',
-    version='1.2',
+    version='1.3',
     description='A tool that helps with finding interesting job offers',
     long_description=long_description,
     long_description_content_type='text/markdown',

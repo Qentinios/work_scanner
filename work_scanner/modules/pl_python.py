@@ -1,5 +1,6 @@
 from modules.base.site import Site
 import re
+from ast import literal_eval
 
 
 class PlPython(Site):
@@ -28,14 +29,17 @@ class PlPython(Site):
             self.find_offers(html)
 
     def find_offers(self, html):
-        for match in re.findall('a href=\"(https://pl\.python\.org/forum/index\.php\?topic=[0-9.]+)\"', html):
-            self.url = match
+        for match in re.finditer('a href=\"(?P<link>https://pl\.python\.org/forum/index\.php\?topic=[?P<link>0-9.]+)\">(?P<title>.*?)</.*?smalltext\">(?P<date>.*?)<', html, flags=re.S):
+            self.url = match.group('link')
+            date = match.group('date').replace('\\n', "").replace('\\t', "")
+
+            title_encoded = match.group('title')
+            title = literal_eval("b'{}'".format(title_encoded)).decode('utf-8')
 
             html2 = self.get_html_lower()
-            self.search_for_keywords(html2)
+            self.search_for_keywords(html2, title, date)
 
-    def search_for_keywords(self, html2):
+    def search_for_keywords(self, html2, title, date):
         if any(keyword in html2 for keyword in self.keywords):
-            date = re.search('&#171; {2}: ([0-9:/ ]+) &#187;', html2)
-            print(date.group(1), self.url)
+            print(date, title, self.url)
 

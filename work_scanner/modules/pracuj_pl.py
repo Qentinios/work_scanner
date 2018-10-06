@@ -57,7 +57,7 @@ class PracujPl(WebBrowser):
         if self.search_for_keywords(page.page_source):
                 print(offer["date"], offer['title'], offer['url'])
 
-    def search_for_keywords(self, html2):
-        if any(keyword in html2 for keyword in self.keywords):
+    def search_for_keywords(self, html):
+        if any(keyword in html for keyword in self.keywords):
             return True
         return False

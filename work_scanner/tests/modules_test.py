@@ -22,15 +22,6 @@ class ModulesTest(unittest.TestCase):
     def test_linkedin_token(self):
         self.assertTrue(hasattr(self.linked_in, 'application'))
 
-    def test_pracuj_pl_download(self):
-        self.assertTrue(len(self.pracuj_pl.get_html_lower()) > 1000)
-
-    def test_pracuj_pl_next_page(self):
-        for i in range(5):
-            self.pracuj_pl.next_page()
-
-        self.assertEqual('https://www.pracuj.pl/praca/python;kw?pn=5', self.pracuj_pl.url)
-
 
 if __name__ == '__main__':
     unittest.main()

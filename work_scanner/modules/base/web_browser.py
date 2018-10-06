@@ -26,3 +26,6 @@ class WebBrowser:
 
         return self.browser
 
+    def __del__(self):
+        self.browser.close()
+

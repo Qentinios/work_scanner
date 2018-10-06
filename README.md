@@ -7,6 +7,7 @@ Every site where you want to look for jobs needs to have own module implemented.
 - https://pl.python.org/forum/index.php?board=9.0
 - https://www.linkedin.com/
 - https://www.pracuj.pl/
+- https://goldenline.pl
 
 If your site is not mentioned, you need to write custom module first.
 
