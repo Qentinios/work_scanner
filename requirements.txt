@@ -1,1 +1,2 @@
-linkedin
+python3-linkedin
+selenium

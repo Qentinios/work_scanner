@@ -1,4 +1,4 @@
-from modules.site import Site
+from modules.base.site import Site
 import re
 
 

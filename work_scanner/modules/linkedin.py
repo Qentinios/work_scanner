@@ -1,5 +1,5 @@
 from linkedin import linkedin
-from modules.site import Site
+from modules.base.site import Site
 
 
 class LinkedIn(Site):
